@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">CoachMarkEx</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="highlight_me">Highlight me!</string>
+
+    <string name="punchhole_message_text">Enable the emoji predictions</string>
+
+    <string name="layered_message_text">Want to customise your keyboard?</string>
+    <string name="layered_button_text">Accept</string>
 </resources>
