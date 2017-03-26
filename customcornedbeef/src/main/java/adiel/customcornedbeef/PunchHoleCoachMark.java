@@ -1,4 +1,4 @@
-package com.swiftkey.customcornedbeef;
+package adiel.customcornedbeef;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -13,16 +13,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-
-
-import com.swiftkey.cornedbeef.R;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-import static android.view.ViewGroup.LayoutParams.*;
+import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
+import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
 /**
  * The coach mark for a "punch hole" to present a transparent circle onto the given view.
@@ -61,6 +60,7 @@ public class PunchHoleCoachMark extends InternallyAnchoredCoachMark {
     private Interpolator INTERPOLATOR = new AccelerateDecelerateInterpolator();
     private AnimatorSet mHorizontalAnimators;
 
+
     protected PunchHoleCoachMark(PunchHoleCoachMarkBuilder builder) {
         super(builder);
 
@@ -83,7 +83,7 @@ public class PunchHoleCoachMark extends InternallyAnchoredCoachMark {
     @Override
     protected View createContentView(View content) {
         final PunchHoleView view = (PunchHoleView) LayoutInflater.from(mContext)
-                .inflate(R.layout.custom_punchhole_coach_mark, null);
+                .inflate(R.layout.my_punchhole_coach_mark, null);
 
         view.addView(content);
 

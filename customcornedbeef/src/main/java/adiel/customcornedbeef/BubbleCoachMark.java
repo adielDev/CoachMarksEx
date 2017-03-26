@@ -1,4 +1,4 @@
-package com.swiftkey.customcornedbeef;
+package adiel.customcornedbeef;
 
 import android.content.Context;
 import android.graphics.Point;
@@ -8,8 +8,6 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.ViewGroup.MarginLayoutParams;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-
-import com.swiftkey.cornedbeef.R;
 
 /**
  * {@link BubbleCoachMark}s are displayed as speech bubble with a 'pointy mark'.
@@ -49,7 +47,7 @@ public class BubbleCoachMark extends InternallyAnchoredCoachMark {
     @Override
     protected View createContentView(View content) {
         // Inflate the coach mark layout and add the content
-        View view = LayoutInflater.from(mContext).inflate(R.layout.custom_bubble_coach_mark, null);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.my_bubble_coach_mark, null);
         LinearLayout contentHolder = (LinearLayout) view
                 .findViewById(R.id.coach_mark_content);
         contentHolder.addView(content);
@@ -65,8 +63,8 @@ public class BubbleCoachMark extends InternallyAnchoredCoachMark {
 
         // Ensure that content holder expands to fill the coach mark
         contentHolder.setLayoutParams(new LinearLayout.LayoutParams(
-                android.view.ViewGroup.LayoutParams.MATCH_PARENT,
-                android.view.ViewGroup.LayoutParams.WRAP_CONTENT));
+                LayoutParams.MATCH_PARENT,
+                LayoutParams.WRAP_CONTENT));
 
         // It is assumed that the top and bottom arrows are identical
         mArrowWidth = mBottomArrow.getMeasuredWidth();

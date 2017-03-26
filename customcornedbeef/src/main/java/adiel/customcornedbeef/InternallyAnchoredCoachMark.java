@@ -1,4 +1,4 @@
-package com.swiftkey.customcornedbeef;
+package adiel.customcornedbeef;
 
 import android.content.Context;
 import android.support.annotation.LayoutRes;

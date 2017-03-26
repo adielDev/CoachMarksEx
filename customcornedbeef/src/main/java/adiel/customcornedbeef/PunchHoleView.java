@@ -1,4 +1,4 @@
-package com.swiftkey.customcornedbeef;
+package adiel.customcornedbeef;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,7 +8,6 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.view.View;
 import android.widget.LinearLayout;
 
 /**
@@ -24,8 +23,8 @@ public class PunchHoleView extends LinearLayout {
     private float mCircleRadius;
     private Rect mRect; // Contains target view's rect
 
-    private View.OnClickListener mPunchHoleClickListener;
-    private View.OnClickListener mGlobalClickListener;
+    private OnClickListener mPunchHoleClickListener;
+    private OnClickListener mGlobalClickListener;
 
     public PunchHoleView(Context context, AttributeSet attrs) {
         super(context, attrs);

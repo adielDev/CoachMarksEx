@@ -1,4 +1,4 @@
-package com.swiftkey.customcornedbeef;
+package adiel.customcornedbeef;
 
 import android.content.Context;
 import android.support.annotation.LayoutRes;
@@ -7,8 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-
-import com.swiftkey.cornedbeef.R;
 
 /**
  * The coach mark to layer for anchor view.
@@ -22,7 +20,7 @@ public class LayeredCoachMark extends InternallyAnchoredCoachMark {
     @Override
     protected View createContentView(View content) {
         final LinearLayout container = (LinearLayout) LayoutInflater.from(mContext)
-                .inflate(R.layout.custom_layered_coach_mark, null);
+                .inflate(R.layout.my_layered_coach_mark, null);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
 

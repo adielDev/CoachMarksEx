@@ -1,4 +1,4 @@
-package com.swiftkey.customcornedbeef;
+package adiel.customcornedbeef;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -17,8 +17,6 @@ import android.view.View.OnTouchListener;
 import android.view.ViewTreeObserver.OnPreDrawListener;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-
-import com.swiftkey.cornedbeef.R;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -260,7 +258,7 @@ public abstract class CoachMark {
     }
 
     /**
-     * An {@link android.view.View.OnClickListener} which wraps an
+     * An {@link View.OnClickListener} which wraps an
      * existing listener with a call to {@link CoachMark#dismiss()}
      *
      * @author lachie
@@ -283,32 +281,32 @@ public abstract class CoachMark {
             }
         }
     }
-    
+
     public static class CoachMarkDimens<T extends Number> {
         public final T width;
         public final T height;
         public final T x;
         public final T y;
-                
+
         public CoachMarkDimens(T x, T y, T width, T height) {
             this.x = x;
             this.y = y;
             this.width = width;
             this.height = height;
         }
-        
+
         public Point getPos() {
             return new Point(x.intValue(), y.intValue());
         }
     }
-    
+
     public abstract static class CoachMarkBuilder {
-        
+
         // Required parameters
         protected Context context;
         protected View anchor;
         protected View content;
-        
+
         // Optional parameters with default values
         protected long timeout = 10000;
         protected OnDismissListener dismissListener;
@@ -327,17 +325,17 @@ public abstract class CoachMark {
         public CoachMarkBuilder(Context context, View anchor, @LayoutRes int contentResId) {
             this(context, anchor, LayoutInflater.from(context).inflate(contentResId, null));
         }
-        
+
         public CoachMarkBuilder(Context context, View anchor, View content) {
             this.context = context;
             this.anchor = anchor;
-            this.content = content;            
+            this.content = content;
         }
-        
+
         /**
          * If the desired anchor view does not contain a valid window token then
          * the token of an alternative view may be used to display the coach mark
-         * 
+         *
          * @param tokenView
          *      the view who's window token should be used
          */
@@ -345,11 +343,11 @@ public abstract class CoachMark {
             this.tokenView = tokenView;
             return this;
         }
-       
+
         /**
          * Set the period of time after which the coach mark should be
          * automatically dismissed
-         * 
+         *
          * @param timeoutInMs
          *      the time in milliseconds after which to dismiss the coach
          *      mark (defaults to 10 seconds)
@@ -358,11 +356,11 @@ public abstract class CoachMark {
             this.timeout = timeoutInMs;
             return this;
         }
-        
+
         /**
          * Set how much padding there should be between the left and right edges
          * of the coach mark and the screen
-         * 
+         *
          * @param padding
          *      the amount of left/right padding in px
          */
@@ -370,11 +368,11 @@ public abstract class CoachMark {
             this.padding = padding;
             return this;
         }
-        
+
         /**
          * Set an {@link CoachMark.OnDismissListener} to be called when the
          * coach mark is dismissed
-         * 
+         *
          * @param listener
          */
         public CoachMarkBuilder setOnDismissListener(OnDismissListener listener) {
@@ -397,7 +395,7 @@ public abstract class CoachMark {
 
         /**
          * Set which animation will be used when displaying/hiding the coach mark
-         * 
+         *
          * @param animationStyle
          *      the resource ID of the Style to be used for showing and hiding the coach mark
          */
@@ -405,7 +403,7 @@ public abstract class CoachMark {
             this.animationStyle = animationStyle;
             return this;
         }
-        
+
         /**
          * Set an {@link CoachMark.OnShowListener} to be called when the
          * coach mark is shown
