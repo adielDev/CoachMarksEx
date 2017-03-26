@@ -129,7 +129,12 @@ public class BubbleCoachMark extends InternallyAnchoredCoachMark {
             currentArrow.setLayoutParams(params);
         }        
     }
-    
+
+    @Override
+    void updateViewWithNewTarget(View newTarget, CoachMarkDimens<Integer> popupDimens, CoachMarkDimens<Integer> anchorDimens) {
+
+    }
+
     public static class BubbleCoachMarkBuilder extends InternallyAnchoredCoachMarkBuilder {
 
         // Optional parameters with default values

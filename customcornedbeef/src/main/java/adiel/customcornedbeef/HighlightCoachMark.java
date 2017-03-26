@@ -42,7 +42,12 @@ public class HighlightCoachMark extends InternallyAnchoredCoachMark {
     protected void updateView(CoachMarkDimens<Integer> popupDimens,  CoachMarkDimens<Integer> anchorDimens) {
         mPopup.update(popupDimens.x, popupDimens.y, popupDimens.width, popupDimens.height);
     }
-    
+
+    @Override
+    void updateViewWithNewTarget(View newTarget, CoachMarkDimens<Integer> popupDimens, CoachMarkDimens<Integer> anchorDimens) {
+
+    }
+
     public static class HighlightCoachMarkBuilder extends InternallyAnchoredCoachMarkBuilder {
 
         public HighlightCoachMarkBuilder(Context context, View anchor) {

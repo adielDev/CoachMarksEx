@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<adiel.customcornedbeef.WishTripPunchHoleView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/punchHole"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+
+
+</adiel.customcornedbeef.WishTripPunchHoleView>
+<!--android:background="@android:color/holo_green_light"-->
+
+    <!-- <include layout="@layout/wish_trip_describe_coach_mark"/>
+  -->

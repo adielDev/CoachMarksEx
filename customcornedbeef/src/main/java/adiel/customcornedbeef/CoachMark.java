@@ -145,6 +145,7 @@ public abstract class CoachMark {
      * Perform any necessary updates to the view when popupDimens or anchorDimens have changed
      */
     protected abstract void updateView(CoachMarkDimens<Integer> popupDimens, CoachMarkDimens<Integer> anchorDimens);
+    abstract void updateViewWithNewTarget(View newTarget, CoachMarkDimens<Integer> popupDimens, CoachMarkDimens<Integer> anchorDimens);
     
     /**
      * Show the coach mark and start listening for changes to the anchor view
@@ -180,6 +181,12 @@ public abstract class CoachMark {
         if (mShowListener != null) {
             mShowListener.onShow();
         }
+    }
+    public void changeTarget(View newTarget){
+
+        final CoachMarkDimens<Integer> anchorDimens = getAnchorDimens();
+        final CoachMarkDimens<Integer> popupDimens = getPopupDimens(anchorDimens);
+        updateViewWithNewTarget(newTarget,popupDimens,anchorDimens);
     }
 
     /**

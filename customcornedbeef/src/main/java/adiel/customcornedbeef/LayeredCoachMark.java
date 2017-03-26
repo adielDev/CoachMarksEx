@@ -48,6 +48,11 @@ public class LayeredCoachMark extends InternallyAnchoredCoachMark {
         mPopup.update(popupDimens.x, popupDimens.y, popupDimens.width, popupDimens.height);
     }
 
+    @Override
+    void updateViewWithNewTarget(View newTarget, CoachMarkDimens<Integer> popupDimens, CoachMarkDimens<Integer> anchorDimens) {
+
+    }
+
     public static class LayeredCoachMarkBuilder extends InternallyAnchoredCoachMarkBuilder {
 
         public LayeredCoachMarkBuilder(Context context, View anchor, String message) {

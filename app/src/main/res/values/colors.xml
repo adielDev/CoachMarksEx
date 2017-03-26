@@ -8,5 +8,6 @@
     <color name="main_orange">#ffcb05</color>
     <color name="main_white">#FFFFFF</color>
     <color name="main_light_grey">#c5c2be</color>
+<!--    <color name="coach_mark_background">#0xBF000000</color>-->
 
 </resources>
