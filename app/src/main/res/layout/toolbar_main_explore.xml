@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:background="#433e41"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <!-- <ImageView -->
+        <!-- android:id="@+id/toolbar_search_icon_iv" -->
+        <!-- android:layout_width="16dp" -->
+        <!-- android:layout_height="match_parent" -->
+        <!-- android:layout_marginLeft="8dp" -->
+        <!-- android:layout_marginStart="8dp" -->
+        <!-- android:src="@drawable/icon_main_toolbar_search" /> -->
+        <!-- <EditText -->
+        <!-- android:id="@+id/toolbar_search_et" -->
+        <!-- android:layout_width="0dp" -->
+        <!-- android:layout_height="match_parent" -->
+        <!-- android:layout_marginLeft="6dp" -->
+        <!-- android:layout_marginStart="6dp" -->
+        <!-- android:layout_weight="1" -->
+        <!-- android:background="@null" -->
+        <!-- android:hint="@string/toolbar_main_et_hint" -->
+        <!-- android:singleLine="true" -->
+        <!-- android:textColor="#A9A4A7" -->
+        <!-- android:textSize="14sp" /> -->
+
+
+        <TextView
+            android:id="@+id/explore_toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="explore"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"/>
+
+
+    </LinearLayout>
+
+</android.support.v7.widget.Toolbar>

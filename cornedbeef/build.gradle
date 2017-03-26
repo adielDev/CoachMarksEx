@@ -1,0 +1,68 @@
+plugins {
+    id "com.jfrog.artifactory" version "3.2.0"
+    id "maven-publish"
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion 22
+        versionCode 2
+        versionName "1.2.2"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-annotations:23.1.1'
+
+    testCompile 'org.robolectric:robolectric:3.0-rc3'
+    testCompile 'org.mockito:mockito-all:2.0.2-beta'
+}
+
+publishing.publications {
+    aar(MavenPublication) {
+        groupId "TouchType"
+        version = android.defaultConfig.versionName
+        artifactId project.getName()
+
+        // Tell maven to prepare the generated "*.aar" file for publishing
+        artifact("$buildDir/outputs/aar/${project.getName()}-release.aar")
+    }
+}
+
+artifactory {
+
+    // artifactory properties with local defaults
+    def user=project.properties['artifactory_user'] ?: "admin"
+    def pass=project.properties['artifactory_pass'] ?: "password"
+    def key=project.properties['artifactory_repo_key'] ?: "libs-release-local"
+    def url=project.properties['artifactory_url'] ?: "http://localhost:8081/artifactory"
+
+    contextUrl = url
+    publish {
+        repository {
+            // The Artifactory repository key to publish to
+            repoKey = key
+            username = user
+            password = pass
+        }
+        defaults {
+            // Tell the Artifactory Plugin which artifacts should be published to Artifactory.
+            publications('aar')
+            publishArtifacts = true
+        }
+    }
+}
+
+

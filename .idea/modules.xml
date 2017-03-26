@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/CoachMarksEx.iml" filepath="$PROJECT_DIR$/CoachMarksEx.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/cornedbeef/cornedbeef.iml" filepath="$PROJECT_DIR$/cornedbeef/cornedbeef.iml" />
+      <module fileurl="file://$PROJECT_DIR$/customcornedbeef/customcornedbeef.iml" filepath="$PROJECT_DIR$/customcornedbeef/customcornedbeef.iml" />
     </modules>
   </component>
 </project>

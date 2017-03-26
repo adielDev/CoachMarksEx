@@ -2,6 +2,7 @@ package adiel.coachmarkex;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -125,6 +126,6 @@ public class MainActivity extends Activity {
     }
 
     public void goToMyAct(View view) {
-
+        startActivity(new Intent(MainActivity.this,MyCoachMarkAct.class));
     }
 }

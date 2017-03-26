@@ -1,0 +1,148 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_master_layout_rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#faf9f6">
+
+    <ViewFlipper
+        android:id="@+id/main_toolbars_vf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:background="#433e41">
+
+        <include
+            android:id="@+id/main_toolbar"
+            layout="@layout/toolbar_main_explore" />
+
+
+
+    </ViewFlipper>
+
+    <FrameLayout
+        android:background="@drawable/archaeological_site"
+        android:id="@+id/main_maincontent_fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="55dp"
+        android:layout_marginTop="56dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true" >
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:background="#433e41" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="5" >
+
+        <RelativeLayout
+            android:id="@+id/main_bottombar_explore_rl"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground" >
+
+            <ImageView
+                android:id="@+id/main_bottombar_explore_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_main_bottombar_explore_pressed" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_bottombar_wishlist_rl"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground" >
+
+            <ImageView
+                android:id="@+id/main_bottombar_wishlist_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_main_bottombar_wishlist" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/main_bottombar_record_iv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:src="@drawable/icon_main_bottombar_record" />
+
+        <RelativeLayout
+            android:id="@+id/main_bottombar_profile_rl"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground" >
+
+            <ImageView
+                android:id="@+id/main_bottombar_profile_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_main_bottombar_profile" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_bottombar_chat_rl"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground" >
+
+            <ImageView
+                android:id="@+id/main_bottombar_chat_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_main_bottombar_chat" />
+
+            <TextView
+                android:id="@+id/main_bottombar_chat_unreadcount_tv"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/shape_green_circle"
+                android:layout_gravity="end|bottom"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="17dp"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"
+                android:textColor="#433e41"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/main_toolbar_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@id/main_toolbars_vf"
+        android:src="@drawable/shape_horizontal_shadow" />
+
+    <!--<com.nhaarman.supertooltips.ToolTipRelativeLayout-->
+    <!--android:id="@+id/main_tooltip_ttrl"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_marginTop="43dp" />-->
+
+</RelativeLayout>
