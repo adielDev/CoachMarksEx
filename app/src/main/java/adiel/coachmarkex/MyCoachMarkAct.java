@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.swiftkey.cornedbeef.CoachMark;
-import com.swiftkey.cornedbeef.PunchHoleCoachMark;
+import com.swiftkey.customcornedbeef.CoachMark;
+import com.swiftkey.customcornedbeef.PunchHoleCoachMark;
 
 
 public class MyCoachMarkAct extends AppCompatActivity {
