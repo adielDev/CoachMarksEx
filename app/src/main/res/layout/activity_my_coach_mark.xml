@@ -9,6 +9,7 @@
     tools:context="adiel.coachmarkex.MyCoachMarkAct">
 
     <Button
+        android:onClick="oneClicked"
         android:id="@+id/one"
         android:text="one"
         android:layout_width="wrap_content"

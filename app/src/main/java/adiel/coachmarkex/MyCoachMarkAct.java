@@ -82,4 +82,7 @@ public class MyCoachMarkAct extends AppCompatActivity {
     }
 
 
+    public void oneClicked(View view) {
+        Toast.makeText(this, "oneClicked", Toast.LENGTH_SHORT).show();
+    }
 }

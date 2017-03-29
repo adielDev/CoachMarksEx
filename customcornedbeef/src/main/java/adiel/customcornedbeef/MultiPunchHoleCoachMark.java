@@ -49,7 +49,7 @@ public class MultiPunchHoleCoachMark extends InternallyAnchoredCoachMark impleme
             }
 
         }
-        if(currentViewKey==mTargetView.length){
+        if(currentViewKey==mTargetView.length-1){
             nextBtn.setEnabled(false);
             prevBtn.setEnabled(true);
         }
@@ -57,7 +57,7 @@ public class MultiPunchHoleCoachMark extends InternallyAnchoredCoachMark impleme
             nextBtn.setEnabled(true);
             prevBtn.setEnabled(false);
         }
-        if(currentViewKey>0 && currentViewKey<mTargetView.length){
+        if(currentViewKey>0 && currentViewKey<mTargetView.length-1){
             nextBtn.setEnabled(true);
             prevBtn.setEnabled(true);
         }
@@ -68,7 +68,7 @@ public class MultiPunchHoleCoachMark extends InternallyAnchoredCoachMark impleme
 
     }
 
-    @IntDef({POSITION_CONTENT_AUTOMATICALLY, POSITION_CONTENT_ABOVE, POSITION_CONTENT_BELOW})
+    @IntDef({POSITION_CONTENT_AUTOMATICALLY, POSITION_CONTENT_ABOVE, POSITION_CONTENT_BELOW,POSITION_CONTENT_FIX})
     @Retention(RetentionPolicy.SOURCE)
     public @interface PunchMarkContentPosition {}
 
@@ -85,6 +85,7 @@ public class MultiPunchHoleCoachMark extends InternallyAnchoredCoachMark impleme
      * Position the coach mark content below the punch hole
      */
     public static final int POSITION_CONTENT_BELOW = 2;
+    public static final int POSITION_CONTENT_FIX = 3;
 
     private final float mGap;
     private final long mHorizontalTranslationDuration;
@@ -212,6 +213,11 @@ public class MultiPunchHoleCoachMark extends InternallyAnchoredCoachMark impleme
                 // Circle in lower side
                 lowerPadding = mAnchor.getHeight() - (int) (relCircleY - mRelCircleRadius[currentViewKey][i]);
             }
+            if (mContentPosition == POSITION_CONTENT_FIX) {
+                upperPadding=0;
+                lowerPadding=0;
+            }
+
 
             int horizontalPadding = (int) mContext.getResources().getDimension(R.dimen.punchhole_coach_mark_horizontal_padding);
             int verticalPadding = (int) mContext.getResources().getDimension(R.dimen.punchhole_coach_mark_vertical_padding);
@@ -250,8 +256,8 @@ public class MultiPunchHoleCoachMark extends InternallyAnchoredCoachMark impleme
                 final int endX = isRtlConfig() ? leftMostPosition : rightMostPosition;
 
                 final ValueAnimator[] horizontalAnimations = new ValueAnimator[]{
-                        ObjectAnimator.ofInt(mPunchHoleView, "circleCenterX", startX, endX,index),
-                        ObjectAnimator.ofInt(mPunchHoleView, "circleCenterX", endX, startX,index)
+                        ObjectAnimator.ofInt(mPunchHoleView, "circleCenterX", startX, endX),
+                        ObjectAnimator.ofInt(mPunchHoleView, "circleCenterX", endX, startX)
                 };
 
                 mHorizontalAnimators = new AnimatorSet();
@@ -300,7 +306,8 @@ public class MultiPunchHoleCoachMark extends InternallyAnchoredCoachMark impleme
         protected View.OnClickListener globalClickListener;
 
         protected long horizontalAnimationDuration;
-        private int contentPositioning = POSITION_CONTENT_AUTOMATICALLY;
+        //private int contentPositioning = POSITION_CONTENT_AUTOMATICALLY;
+        private int contentPositioning = POSITION_CONTENT_FIX;
         /**
          * Default layout parameters for {@link LinearLayout}, from which {@link PunchHoleView}
          * inherits
@@ -308,7 +315,8 @@ public class MultiPunchHoleCoachMark extends InternallyAnchoredCoachMark impleme
          * @see LinearLayout#generateDefaultLayoutParams()
          */
         private int contentWidth = MATCH_PARENT;
-        private int contentHeight = WRAP_CONTENT;
+        //private int contentHeight = WRAP_CONTENT;
+        private int contentHeight = MATCH_PARENT;
 
         public PunchHoleCoachMarkBuilder(Context context, View anchor, String message) {
             super(context, anchor, message);
