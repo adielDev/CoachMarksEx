@@ -164,6 +164,11 @@ public class PunchHoleCoachMark extends InternallyAnchoredCoachMark {
 
     }
 
+    @Override
+    void updateViewWithNewMultiTarget(View[] newTargets, CoachMarkDimens<Integer> popupDimens, CoachMarkDimens<Integer> anchorDimens) {
+
+    }
+
     /**
      * Move the punch hole from start to end of the target view and back from
      * end to start, unless the width of the target view is smaller than the

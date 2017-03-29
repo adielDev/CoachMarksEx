@@ -48,6 +48,11 @@ public class HighlightCoachMark extends InternallyAnchoredCoachMark {
 
     }
 
+    @Override
+    void updateViewWithNewMultiTarget(View[] newTargets, CoachMarkDimens<Integer> popupDimens, CoachMarkDimens<Integer> anchorDimens) {
+
+    }
+
     public static class HighlightCoachMarkBuilder extends InternallyAnchoredCoachMarkBuilder {
 
         public HighlightCoachMarkBuilder(Context context, View anchor) {

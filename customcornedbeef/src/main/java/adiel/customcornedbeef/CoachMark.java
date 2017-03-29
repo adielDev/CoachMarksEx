@@ -145,8 +145,10 @@ public abstract class CoachMark {
      * Perform any necessary updates to the view when popupDimens or anchorDimens have changed
      */
     protected abstract void updateView(CoachMarkDimens<Integer> popupDimens, CoachMarkDimens<Integer> anchorDimens);
-    abstract void updateViewWithNewTarget(View newTarget, CoachMarkDimens<Integer> popupDimens, CoachMarkDimens<Integer> anchorDimens);
-    
+
+    abstract void updateViewWithNewTarget(View newTarget, CoachMark.CoachMarkDimens<Integer> popupDimens, CoachMark.CoachMarkDimens<Integer> anchorDimens);
+    abstract void updateViewWithNewMultiTarget(View []newTargets, CoachMark.CoachMarkDimens<Integer> popupDimens, CoachMark.CoachMarkDimens<Integer> anchorDimens);
+
     /**
      * Show the coach mark and start listening for changes to the anchor view
      */
@@ -187,6 +189,12 @@ public abstract class CoachMark {
         final CoachMarkDimens<Integer> anchorDimens = getAnchorDimens();
         final CoachMarkDimens<Integer> popupDimens = getPopupDimens(anchorDimens);
         updateViewWithNewTarget(newTarget,popupDimens,anchorDimens);
+    }
+    public void changeMultiTarget(View[] newTarget){
+
+        final CoachMarkDimens<Integer> anchorDimens = getAnchorDimens();
+        final CoachMarkDimens<Integer> popupDimens = getPopupDimens(anchorDimens);
+        updateViewWithNewMultiTarget(newTarget,popupDimens,anchorDimens);
     }
 
     /**

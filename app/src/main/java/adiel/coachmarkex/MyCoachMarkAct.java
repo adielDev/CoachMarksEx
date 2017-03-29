@@ -48,7 +48,9 @@ public class MyCoachMarkAct extends AppCompatActivity {
         final View anchorLinearLayoutHoldButton = findViewById(R.id.activity_my_coach_mark);
 
         LinearLayout punchholeContent = (LinearLayout) LayoutInflater.from(context).inflate(R.layout.wish_trip_xoach_mark_content, null);
-        View [] views = getViews(new int[]{R.id.one,R.id.two,R.id.three,R.id.four});
+        View [] viewFirstSession = getViews(new int[]{R.id.one,R.id.three,R.id.four});
+        View [] viewSecondSession = getViews(new int[]{R.id.two});
+        View[][] views = new View[][]{viewFirstSession,viewSecondSession};
 
         CoachMark.CoachMarkBuilder coachMarkBuilder = new MultiPunchHoleCoachMark.PunchHoleCoachMarkBuilder(
                 context, anchorLinearLayoutHoldButton, punchholeContent)

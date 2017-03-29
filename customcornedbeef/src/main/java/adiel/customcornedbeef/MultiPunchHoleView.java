@@ -28,7 +28,12 @@ public class MultiPunchHoleView extends LinearLayout {
 
     public MultiPunchHoleView(Context context, AttributeSet attrs) {
         super(context, attrs);
-
+        mPaint = new Paint();
+        mPaint.setAntiAlias(true);
+        mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+    }
+    public MultiPunchHoleView(Context context) {
+        super(context);
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
         mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));

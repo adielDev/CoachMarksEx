@@ -53,6 +53,11 @@ public class LayeredCoachMark extends InternallyAnchoredCoachMark {
 
     }
 
+    @Override
+    void updateViewWithNewMultiTarget(View[] newTargets, CoachMarkDimens<Integer> popupDimens, CoachMarkDimens<Integer> anchorDimens) {
+
+    }
+
     public static class LayeredCoachMarkBuilder extends InternallyAnchoredCoachMarkBuilder {
 
         public LayeredCoachMarkBuilder(Context context, View anchor, String message) {

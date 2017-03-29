@@ -13,8 +13,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.Toast;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -25,7 +27,46 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 /**
  * The coach mark for a "punch hole" to present a transparent circle onto the given view.
  */
-public class MultiPunchHoleCoachMark extends InternallyAnchoredCoachMark {
+public class MultiPunchHoleCoachMark extends InternallyAnchoredCoachMark implements View.OnClickListener {
+
+    @Override
+    public void onClick(View v) {
+
+        int i = v.getId();
+        if (i == R.id.nextBtn) {
+            if(currentViewKey>=mTargetView.length-1){
+                Toast.makeText(mContext, "currentViewKey>=viewsMap.size()", Toast.LENGTH_SHORT).show();
+            }else {
+                currentViewKey++;
+                changeMultiTarget(mTargetView[currentViewKey]);
+            }
+        }else if(i==R.id.prevBtn){
+            if(currentViewKey<0){
+                Toast.makeText(mContext, "currentViewKey<0", Toast.LENGTH_SHORT).show();
+            }else {
+                currentViewKey--;
+                changeMultiTarget(mTargetView[currentViewKey]);
+            }
+
+        }
+        if(currentViewKey==mTargetView.length){
+            nextBtn.setEnabled(false);
+            prevBtn.setEnabled(true);
+        }
+        if(currentViewKey<=0){
+            nextBtn.setEnabled(true);
+            prevBtn.setEnabled(false);
+        }
+        if(currentViewKey>0 && currentViewKey<mTargetView.length){
+            nextBtn.setEnabled(true);
+            prevBtn.setEnabled(true);
+        }
+        if(i==R.id.dismissBtn){
+            dismiss();
+        }
+
+
+    }
 
     @IntDef({POSITION_CONTENT_AUTOMATICALLY, POSITION_CONTENT_ABOVE, POSITION_CONTENT_BELOW})
     @Retention(RetentionPolicy.SOURCE)
@@ -48,16 +89,19 @@ public class MultiPunchHoleCoachMark extends InternallyAnchoredCoachMark {
     private final float mGap;
     private final long mHorizontalTranslationDuration;
     private final int mContentPosition;
-    private  View [] mTargetView ;
+    private  View [][] mTargetView ;
     private final int[] mTargetViewLoc = new int[2];
     private final int[] mAnchorViewLoc = new int[2];
-    private float []mRelCircleRadius ;
+    private float [][]mRelCircleRadius ;
 
     private MultiPunchHoleView mPunchHoleView;
     private View mPunchHoleContent;
     private Interpolator INTERPOLATOR = new AccelerateDecelerateInterpolator();
     private AnimatorSet mHorizontalAnimators;
-
+    Button nextBtn;
+    Button prevBtn;
+    Button dismissBtn;
+    int currentViewKey=0;
 
     protected MultiPunchHoleCoachMark(PunchHoleCoachMarkBuilder builder) {
         super(builder);
@@ -65,7 +109,10 @@ public class MultiPunchHoleCoachMark extends InternallyAnchoredCoachMark {
         mGap = mContext.getResources().getDimension(R.dimen.punchhole_coach_mark_gap);
 
         mTargetView = builder.targetView;
-        mRelCircleRadius = new float[mTargetView.length];
+        mRelCircleRadius = new float[mTargetView.length][];
+        for (int i = 0; i <mTargetView.length ; i++) {
+            mRelCircleRadius[i]=new float[mTargetView[i].length];
+        }
 
         mPunchHoleView.setOnTargetClickListener(builder.targetClickListener);
         mPunchHoleView.setOnGlobalClickListener(builder.globalClickListener);
@@ -81,14 +128,26 @@ public class MultiPunchHoleCoachMark extends InternallyAnchoredCoachMark {
 
     @Override
     protected View createContentView(View content) {
-        final MultiPunchHoleView view = (MultiPunchHoleView) LayoutInflater.from(mContext)
-                .inflate(R.layout.multi_punchhole_coach_mark, null);
+//        final MultiPunchHoleView view = (MultiPunchHoleView) LayoutInflater.from(mContext)
+//                .inflate(R.layout.multi_punchhole_coach_mark, null);
+
+        MultiPunchHoleView view = new MultiPunchHoleView(mContext);
 
         view.addView(content);
 
         mPunchHoleView = view;
-
         mPunchHoleContent = content;
+
+        prevBtn = (Button) mPunchHoleContent.findViewById(R.id.prevBtn);
+        prevBtn.setOnClickListener(this);
+        if(currentViewKey==0){
+            prevBtn.setEnabled(false);
+        }
+        nextBtn= (Button) mPunchHoleContent.findViewById(R.id.nextBtn);
+        nextBtn.setOnClickListener(this);
+
+        mPunchHoleContent.findViewById(R.id.dismissBtn).setOnClickListener(this);
+
 
         return view;
     }
@@ -108,11 +167,11 @@ public class MultiPunchHoleCoachMark extends InternallyAnchoredCoachMark {
     @Override
     protected void updateView(CoachMarkDimens<Integer> popupDimens,  CoachMarkDimens<Integer> anchorDimens) {
         mPopup.update(popupDimens.x, popupDimens.y, popupDimens.width, popupDimens.height);
-        mPunchHoleView.init(mTargetView.length);
-        for (int i = 0; i <mTargetView.length; i++) {
-            mTargetView[i].getLocationOnScreen(mTargetViewLoc);
+        mPunchHoleView.init(mTargetView[currentViewKey].length);
+        for (int i = 0; i <mTargetView[currentViewKey].length; i++) {
+            mTargetView[currentViewKey][i].getLocationOnScreen(mTargetViewLoc);
             mAnchor.getLocationOnScreen(mAnchorViewLoc);
-            mRelCircleRadius[i] = (mTargetView[i].getHeight() + mGap) / 2;
+            mRelCircleRadius[currentViewKey][i] = (mTargetView[currentViewKey][i].getHeight() + mGap) / 2;
 
             // If the coachmark has an horizontal translation animation, draw the
             // circle on the start of the target view (it will move to the end).
@@ -120,14 +179,14 @@ public class MultiPunchHoleCoachMark extends InternallyAnchoredCoachMark {
             // of the punch hole, just center the circle (no point in animating).
             final int startOffsetX = hasHorizontalTranslation(i)
                     ?  isRtlConfig()
-                    ? mTargetViewLoc[0] + mTargetView[i].getWidth() - (int) mRelCircleRadius[i]
-                    : mTargetViewLoc[0] + (int) mRelCircleRadius[i]
-                    : (mTargetView[i].getWidth() / 2);
+                    ? mTargetViewLoc[0] + mTargetView[currentViewKey][i].getWidth() - (int) mRelCircleRadius[currentViewKey][i]
+                    : mTargetViewLoc[0] + (int) mRelCircleRadius[currentViewKey][i]
+                    : (mTargetView[currentViewKey][i].getWidth() / 2);
 
             final int relCircleX = mTargetViewLoc[0] - mAnchorViewLoc[0] + startOffsetX;
-            final int relCircleY = mTargetViewLoc[1] - mAnchorViewLoc[1] + (mTargetView[i].getHeight() / 2);
+            final int relCircleY = mTargetViewLoc[1] - mAnchorViewLoc[1] + (mTargetView[currentViewKey][i].getHeight() / 2);
 
-            if (!mPunchHoleView.setCircle(relCircleX, relCircleY, mRelCircleRadius[i],i)) {
+            if (!mPunchHoleView.setCircle(relCircleX, relCircleY, mRelCircleRadius[currentViewKey][i],i)) {
                 return;
             }
 
@@ -148,10 +207,10 @@ public class MultiPunchHoleCoachMark extends InternallyAnchoredCoachMark {
 
             if (positioning == POSITION_CONTENT_BELOW) {
                 // Circle in upper side
-                upperPadding = (int) (relCircleY + mRelCircleRadius[i]);
+                upperPadding = (int) (relCircleY + mRelCircleRadius[currentViewKey][i]);
             } else {
                 // Circle in lower side
-                lowerPadding = mAnchor.getHeight() - (int) (relCircleY - mRelCircleRadius[i]);
+                lowerPadding = mAnchor.getHeight() - (int) (relCircleY - mRelCircleRadius[currentViewKey][i]);
             }
 
             int horizontalPadding = (int) mContext.getResources().getDimension(R.dimen.punchhole_coach_mark_horizontal_padding);
@@ -168,6 +227,12 @@ public class MultiPunchHoleCoachMark extends InternallyAnchoredCoachMark {
 
     }
 
+    @Override
+    void updateViewWithNewMultiTarget(View[] newTargets, CoachMarkDimens<Integer> popupDimens, CoachMarkDimens<Integer> anchorDimens) {
+        mTargetView[currentViewKey] = newTargets;
+        updateView(popupDimens,anchorDimens);
+    }
+
     /**
      * Move the punch hole from start to end of the target view and back from
      * end to start, unless the width of the target view is smaller than the
@@ -178,8 +243,8 @@ public class MultiPunchHoleCoachMark extends InternallyAnchoredCoachMark {
     private void animateHorizontalTranslation(int index) {
         if (hasHorizontalTranslation(index) && mHorizontalAnimators == null) {
             for (int i = 0; i < mTargetView.length; i++) {
-                final int leftMostPosition = mTargetViewLoc[0] + (int) mRelCircleRadius[i];
-                final int rightMostPosition = mTargetViewLoc[0] + mTargetView[i].getWidth() - (int) mRelCircleRadius[i];
+                final int leftMostPosition = mTargetViewLoc[0] + (int) mRelCircleRadius[currentViewKey][i];
+                final int rightMostPosition = mTargetViewLoc[0] + mTargetView[currentViewKey][i].getWidth() - (int) mRelCircleRadius[currentViewKey][i];
 
                 final int startX = isRtlConfig() ? rightMostPosition : leftMostPosition;
                 final int endX = isRtlConfig() ? leftMostPosition : rightMostPosition;
@@ -210,7 +275,7 @@ public class MultiPunchHoleCoachMark extends InternallyAnchoredCoachMark {
      * @return  whether to display the animation
      */
     private boolean hasHorizontalTranslation(int index) {
-        return mHorizontalTranslationDuration > 0 && mTargetView[index].getWidth() > 2 * mRelCircleRadius[index];
+        return mHorizontalTranslationDuration > 0 && mTargetView[currentViewKey][index].getWidth() > 2 * mRelCircleRadius[currentViewKey][index];
     }
 
     /**
@@ -228,7 +293,7 @@ public class MultiPunchHoleCoachMark extends InternallyAnchoredCoachMark {
 
     public static class PunchHoleCoachMarkBuilder extends InternallyAnchoredCoachMarkBuilder {
 
-        protected View[] targetView;
+        protected View[][]targetView;
         protected int overlayColor = 0xBF000000;
 
         protected View.OnClickListener targetClickListener;
@@ -262,7 +327,7 @@ public class MultiPunchHoleCoachMark extends InternallyAnchoredCoachMark {
          *
          * @param view
          */
-        public PunchHoleCoachMarkBuilder setTargetView(View[] view) {
+        public PunchHoleCoachMarkBuilder setTargetView(View[][] view) {
             this.targetView = view;
             return this;
         }

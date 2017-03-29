@@ -174,6 +174,11 @@ public class WishTripPunchHoleCoachMark extends InternallyAnchoredCoachMark impl
     }
 
     @Override
+    void updateViewWithNewMultiTarget(View[] newTargets, CoachMarkDimens<Integer> popupDimens, CoachMarkDimens<Integer> anchorDimens) {
+
+    }
+
+    @Override
     protected void updateView(CoachMarkDimens<Integer> popupDimens,  CoachMarkDimens<Integer> anchorDimens) {
         mPopup.update(popupDimens.x, popupDimens.y, popupDimens.width, popupDimens.height);
 
