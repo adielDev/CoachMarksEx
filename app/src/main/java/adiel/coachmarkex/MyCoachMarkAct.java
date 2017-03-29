@@ -1,25 +1,16 @@
 package adiel.coachmarkex;
 
-import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import adiel.customcornedbeef.CoachMark;
-import adiel.customcornedbeef.WishTripPunchHoleCoachMark;
+import adiel.customcornedbeef.MultiPunchHoleCoachMark;
 
 
 public class MyCoachMarkAct extends AppCompatActivity {
@@ -59,9 +50,9 @@ public class MyCoachMarkAct extends AppCompatActivity {
         LinearLayout punchholeContent = (LinearLayout) LayoutInflater.from(context).inflate(R.layout.wish_trip_xoach_mark_content, null);
         View [] views = getViews(new int[]{R.id.one,R.id.two,R.id.three,R.id.four});
 
-        CoachMark.CoachMarkBuilder coachMarkBuilder = new WishTripPunchHoleCoachMark.PunchHoleCoachMarkBuilder(
-                context, anchorLinearLayoutHoldButton, punchholeContent,views)
-                .setTargetView(views[0])
+        CoachMark.CoachMarkBuilder coachMarkBuilder = new MultiPunchHoleCoachMark.PunchHoleCoachMarkBuilder(
+                context, anchorLinearLayoutHoldButton, punchholeContent)
+                .setTargetView(views)
                 .setOnTargetClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -75,13 +66,6 @@ public class MyCoachMarkAct extends AppCompatActivity {
                         Toast.makeText(context, "The coach mark clicked!", Toast.LENGTH_SHORT).show();
                     }
                 })
-                .setOnNextBtnListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                       // mPunchHoleCoachMark.changeTarget(newTArget);
-                    }
-                })
-                //.setNextView(newTArget)
                 .setTimeout(0);
 
 
