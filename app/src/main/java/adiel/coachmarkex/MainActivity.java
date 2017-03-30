@@ -128,4 +128,12 @@ public class MainActivity extends Activity {
     public void goToMyAct(View view) {
         startActivity(new Intent(MainActivity.this,MyCoachMarkAct.class));
     }
+
+
+
+
+
+    public void goToShowCaseAct(View view) {
+        startActivity(new Intent(MainActivity.this,ShowCaseViewAct.class));
+    }
 }

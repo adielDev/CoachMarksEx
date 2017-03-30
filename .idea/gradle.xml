@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/cornedbeef" />
             <option value="$PROJECT_DIR$/customcornedbeef" />
+            <option value="$PROJECT_DIR$/showcase" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

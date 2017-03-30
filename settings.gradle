@@ -1,1 +1,1 @@
-include ':app', ':cornedbeef', ':customcornedbeef'
+include ':app', ':cornedbeef', ':customcornedbeef', ':showcase'

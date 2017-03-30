@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MyCoachMarkAct"></activity>
+        <activity android:name=".MyCoachMarkAct" />
+        <activity android:name=".ShowCaseViewAct"></activity>
     </application>
 
 </manifest>
