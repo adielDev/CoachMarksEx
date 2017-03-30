@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4/btn_cling_normal.9.png",
+        "source": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/build/intermediates/bundles/debug/res/drawable-mdpi-v4/btn_cling_normal.9.png"
+    },
+    {
+        "merged": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4/hand.png",
+        "source": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/build/intermediates/bundles/debug/res/drawable-mdpi-v4/hand.png"
+    },
+    {
+        "merged": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4/cling.png",
+        "source": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/build/intermediates/bundles/debug/res/drawable-mdpi-v4/cling.png"
+    },
+    {
+        "merged": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4/btn_cling_pressed.9.png",
+        "source": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/build/intermediates/bundles/debug/res/drawable-mdpi-v4/btn_cling_pressed.9.png"
+    }
+]

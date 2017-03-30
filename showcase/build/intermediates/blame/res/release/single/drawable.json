@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/build/intermediates/res/merged/release/drawable/button_normal.xml",
+        "source": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/src/main/res/drawable/button_normal.xml"
+    },
+    {
+        "merged": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/build/intermediates/res/merged/release/drawable/cling_button_bg.xml",
+        "source": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/src/main/res/drawable/cling_button_bg.xml"
+    },
+    {
+        "merged": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/build/intermediates/res/merged/release/drawable/button.xml",
+        "source": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/src/main/res/drawable/button.xml"
+    }
+]

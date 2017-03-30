@@ -1,0 +1,363 @@
+[
+    {
+        "outputFile": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/build/intermediates/incremental/mergeReleaseResources/merged.dir/values/values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 817,
+                    "endColumn": 48,
+                    "endOffset": 861
+                },
+                "from": {
+                    "file": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/src/main/res/values/dimens.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 757,
+                        "endColumn": 48,
+                        "endOffset": 801
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 866,
+                    "endColumn": 44,
+                    "endOffset": 906
+                },
+                "from": {
+                    "file": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/src/main/res/values/dimens.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 668,
+                        "endColumn": 44,
+                        "endOffset": 708
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 911,
+                    "endColumn": 46,
+                    "endOffset": 953
+                },
+                "from": {
+                    "file": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/src/main/res/values/dimens.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 806,
+                        "endColumn": 46,
+                        "endOffset": 848
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 958,
+                    "endColumn": 52,
+                    "endOffset": 1006
+                },
+                "from": {
+                    "file": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/src/main/res/values/dimens.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 853,
+                        "endColumn": 52,
+                        "endOffset": 901
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 1011,
+                    "endColumn": 56,
+                    "endOffset": 1063
+                },
+                "from": {
+                    "file": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/src/main/res/values/dimens.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 960,
+                        "endColumn": 56,
+                        "endOffset": 1012
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 1068,
+                    "endColumn": 53,
+                    "endOffset": 1117
+                },
+                "from": {
+                    "file": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/src/main/res/values/dimens.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 906,
+                        "endColumn": 53,
+                        "endOffset": 955
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 1122,
+                    "endColumn": 43,
+                    "endOffset": 1161
+                },
+                "from": {
+                    "file": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/src/main/res/values/dimens.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 713,
+                        "endColumn": 43,
+                        "endOffset": 752
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1166,
+                    "endColumn": 44,
+                    "endOffset": 1206
+                },
+                "from": {
+                    "file": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/src/main/res/values/ids.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 629,
+                        "endColumn": 45,
+                        "endOffset": 670
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1211,
+                    "endColumn": 46,
+                    "endOffset": 1253
+                },
+                "from": {
+                    "file": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/src/main/res/values/ids.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 725,
+                        "endColumn": 47,
+                        "endOffset": 768
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1258,
+                    "endColumn": 48,
+                    "endOffset": 1302
+                },
+                "from": {
+                    "file": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/src/main/res/values/ids.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 675,
+                        "endColumn": 49,
+                        "endOffset": 720
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1307,
+                    "endColumn": 33,
+                    "endOffset": 1336
+                },
+                "from": {
+                    "file": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 668,
+                        "endColumn": 33,
+                        "endOffset": 697
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1341,
+                    "endLine": 23,
+                    "endColumn": 12,
+                    "endOffset": 1778
+                },
+                "from": {
+                    "file": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/src/main/res/values/styles.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 689,
+                        "endLine": 26,
+                        "endColumn": 12,
+                        "endOffset": 1126
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 1783,
+                    "endLine": 29,
+                    "endColumn": 12,
+                    "endOffset": 2127
+                },
+                "from": {
+                    "file": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/src/main/res/values/styles.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 4,
+                        "startOffset": 1494,
+                        "endLine": 40,
+                        "endColumn": 12,
+                        "endOffset": 1838
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 30,
+                    "startColumn": 4,
+                    "startOffset": 2132,
+                    "endLine": 35,
+                    "endColumn": 12,
+                    "endOffset": 2488
+                },
+                "from": {
+                    "file": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/src/main/res/values/styles.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 1132,
+                        "endLine": 33,
+                        "endColumn": 12,
+                        "endOffset": 1488
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 36,
+                    "startColumn": 4,
+                    "startOffset": 2493,
+                    "endLine": 38,
+                    "endColumn": 12,
+                    "endOffset": 2647
+                },
+                "from": {
+                    "file": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/src/main/res/values/styles.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 4,
+                        "startOffset": 2009,
+                        "endLine": 48,
+                        "endColumn": 12,
+                        "endOffset": 2163
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 2652,
+                    "endLine": 43,
+                    "endColumn": 12,
+                    "endOffset": 2881
+                },
+                "from": {
+                    "file": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/src/main/res/values/styles.xml",
+                    "position": {
+                        "startLine": 50,
+                        "startColumn": 4,
+                        "startOffset": 2169,
+                        "endLine": 54,
+                        "endColumn": 12,
+                        "endOffset": 2398
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 44,
+                    "startColumn": 4,
+                    "startOffset": 2886,
+                    "endLine": 46,
+                    "endColumn": 12,
+                    "endOffset": 3045
+                },
+                "from": {
+                    "file": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/src/main/res/values/styles.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 4,
+                        "startOffset": 1844,
+                        "endLine": 44,
+                        "endColumn": 12,
+                        "endOffset": 2003
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 47,
+                    "startColumn": 4,
+                    "startOffset": 3050,
+                    "endLine": 49,
+                    "endColumn": 12,
+                    "endOffset": 3168
+                },
+                "from": {
+                    "file": "/home/recntrek7/AndroidStudioProjects/MyTRaining/CoachMarksEx/showcase/src/main/res/values/styles.xml",
+                    "position": {
+                        "startLine": 56,
+                        "startColumn": 4,
+                        "startOffset": 2404,
+                        "endLine": 58,
+                        "endColumn": 12,
+                        "endOffset": 2522
+                    }
+                }
+            }
+        ]
+    }
+]
